@@ -1,7 +1,7 @@
 commonjs-rhino
 ==============
 
-CommonJS support for Rhino, in Ruby (JRuby specifically). commonjs-rhino allows you to create JavaScript contexts that contain a `require` method you can use to load CommonJs modules.
+CommonJs support for Rhino, in Ruby (JRuby specifically). commonjs-rhino allows you to create JavaScript contexts that contain a `require` method you can use to load CommonJs modules.
 
 ## Installation
 
@@ -13,7 +13,7 @@ Then, require it somewhere in your code:
 require 'commonjs-rhino'
 ```
 
-Please be aware this gem requires Mozilla's Rhino JavaScript environment, which means Rhino will need to be somewhere in your Java classpath. commonjs-rhino was developed using jbundler, which I recommend for Java dependency management. It's pretty easy to set up, here's a quick guide: Run `gem install jbundler`, then add `require 'jbundler'` in your project before any `java_import` statements are executed. In other words, your project should contain these lines in this order:
+Please be aware this gem requires Mozilla's Rhino JavaScript environment, which means Rhino will need to be somewhere in your Java classpath. commonjs-rhino was developed using [jbundler](https://github.com/mkristian/jbundler), which I recommend for Java dependency management. It's pretty easy to set up, here's a quick guide: Run `gem install jbundler`, then add `require 'jbundler'` in your project before any `java_import` statements are executed. In other words, your project should contain these lines in this order:
 
 ```ruby
 require 'jbundler'
@@ -44,10 +44,16 @@ context.eval('hello.strVariable')  # => 'foobarbaz'
 
 It's that easy!
 
+You can also evaluate files with the handy `eval_file` method:
+
+```ruby
+context.eval_file('/path/to/file.js')
+```
+
 ## Requirements
 
 1. [JRuby](http://jruby.org/)
-2. [Rhino](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino) on your classpath (see above).
+2. [Rhino](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino) in your classpath (see above).
 
 ## Running Tests
 
