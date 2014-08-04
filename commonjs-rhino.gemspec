@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/camertron"
 
   s.description = s.summary = "CommonJS support for Rhino, in Ruby."
+  s.requirements << "jar 'org.mozilla:rhino', '1.7R4'"
 
   s.platform = Gem::Platform::RUBY
   s.has_rdoc = true

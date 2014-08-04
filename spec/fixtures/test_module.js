@@ -3,4 +3,4 @@
   module.exports.func = function() {
     return "I'm a little teapot";
   };
-}).call()
+}).call();
