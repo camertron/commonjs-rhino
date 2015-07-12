@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/camertron/commonjs-rhino.svg)](https://travis-ci.org/camertron/commonjs-rhino) [![Code Climate](https://codeclimate.com/github/camertron/commonjs-rhino/badges/gpa.svg)](https://codeclimate.com/github/camertron/commonjs-rhino) [![Test Coverage](https://codeclimate.com/github/camertron/commonjs-rhino/badges/coverage.svg)](https://codeclimate.com/github/camertron/commonjs-rhino/coverage)
+
 commonjs-rhino
 ==============
 
@@ -13,12 +15,14 @@ Then, require it somewhere in your code:
 require 'commonjs-rhino'
 ```
 
-Please be aware this gem requires Mozilla's Rhino JavaScript environment, which means Rhino will need to be somewhere in your Java classpath. commonjs-rhino was developed using [jbundler](https://github.com/mkristian/jbundler), which I recommend for Java dependency management. It's pretty easy to set up, here's a quick guide: Run `gem install jbundler`, then add `require 'jbundler'` in your project before any `java_import` statements are executed. In other words, your project should contain these lines in this order:
+Please be aware this gem requires Mozilla's Rhino JavaScript environment, which means Rhino will need to be somewhere in your Java classpath. commonjs-rhino was developed using [expert](https://github.com/camertron/expert). You may find it convenient to use expert in your own project to manage commonjs-rhino's Java dependencies. Just add expert to your bundle and add these lines in your project:
 
 ```ruby
-require 'jbundler'
+require 'expert'
+Expert.environment.require_all
+
 require 'commonjs-rhino'
-# require other jbundler-compatible gems
+# your code here
 ```
 
 ## Usage
